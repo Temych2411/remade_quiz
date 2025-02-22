@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #9933FF 0%, #9933FF 100%);
+
+}
+
+#start-screen {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+#start-btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+
+}
+
+#start-btn:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    transform: translateY(-2px);
+
+}
+
+#quiz-screen {
+    display: none;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease-out;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
+    color: #333;
+}
+
+.answers {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.answer {
+    flex: 0 1 calc(20% - 15px);
+    min-width: 50px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.answer:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-message {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: linear-gradient(to right, #f6f9fc, #f1f4f8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@media (max-width: 768px) {
+    .question {
+        font-size: 36px;
+    }
+    
+    .answer {
+        flex: 0 1 calc(33.333% - 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .question {
+        font-size: 28px;
+    }
+    
+    .answer {
+        flex: 0 1 calc(50% - 15px);
+    }
+}
